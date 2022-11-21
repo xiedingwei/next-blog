@@ -1,0 +1,40 @@
+{
+  "version": "2.0",
+  "envId": "xdw-cloud-base-2gjir0vpe05f05e0",
+  "$schema": "https://framework-1258016615.tcloudbaseapp.com/schema/latest.json",
+  "framework": {
+    "name": "next-ssr",
+    "plugins": {
+      "client": {
+        "use": "@cloudbase/framework-plugin-next",
+        "inputs": {
+          "entry": "./",
+          "path": "/next-ssr",
+          "name": "next-ssr",
+          "buildCommand": "npm run build"
+        }
+      },
+      "server": {
+        "use": "@cloudbase/framework-plugin-function",
+        "inputs": {
+          "functionRootPath": "cloudfunctions",
+          "functions": [
+            {
+              "name": "next-ssr-echo",
+              "timeout": 5,
+              "envVariables": {},
+              "runtime": "Nodejs10.15",
+              "memory": 128
+            }
+          ],
+          "servicePaths": {
+            "next-ssr-echo": "/next-ssr-echo"
+          }
+        }
+      }
+    }
+  },
+  "functionRoot": "./functions",
+  "functions": [],
+  "region": "ap-shanghai"
+}

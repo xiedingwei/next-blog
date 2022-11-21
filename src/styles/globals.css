@@ -1,0 +1,77 @@
+/* ./styles/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {}
+
+* {
+  box-sizing: border-box;
+}
+
+.codeBlock:hover::before {
+  content: '复制';
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  background: #9CA3AF;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+.home-img img {
+  height: 8rem;
+  float: right;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+
+  .responsive-layout {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 480px) {
+  .responsive-layout {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .responsive-layout {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* .codeBlock:active::after {
+  content: '复制成功！';
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  background: #9CA3AF;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+} */
+
+/* @keyframes tipSuccess {
+  from{
+    opacity: 1;
+  }
+  from{
+    opacity: 0;
+  }
+} */
