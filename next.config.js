@@ -16,7 +16,7 @@ const path = require('path')
 const nextConfig = {
   webpack5: true,
   reactStrictMode: true,
-  basePath: '/next-ssr',
+  //basePath: '/next-ssr',
   webpack: (config, { buildId, dev, isServer, ...option }) => {
     // Perform customizations to webpack config
     // Important: return the modified config
