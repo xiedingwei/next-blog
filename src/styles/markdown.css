@@ -84,7 +84,6 @@
 .markdown table,
 .markdown pre,
 .markdown dl,
-.markdown blockquote,
 .markdown q,
 .markdown ul,
 .markdown ol {
@@ -150,10 +149,17 @@
 
 .markdown blockquote,
 .markdown q {
-  border-left: 4px solid #DDD;
-  padding: 0 1em;
-  color: #777;
+  border-left: 4px solid #49b1f5;
+  padding: 1em;
+  color: #a1a1a1;
   quotes: none;
+  background-color: #ecf7fe;
+  margin-bottom: 1.2rem;
+}
+
+.markdown blockquote p,
+.markdown q p {
+  margin: 0 !important;
 }
 
 .markdown blockquote::before,

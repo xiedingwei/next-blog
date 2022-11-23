@@ -23,7 +23,7 @@ export default class Nav extends Component {
   componentDidMount() {
     const that = this
     // console.log(this.refCanvas.current)
-    window.addEventListener('scroll', that.onScroll, true)
+    window.onscroll = that.onScroll
   }
   onScroll = () => {
     const that = this
@@ -37,8 +37,8 @@ export default class Nav extends Component {
     }
   }
   componentWillUnmount() {
-    const that = this
-    window.removeEventListener('scroll', that.onScroll, true)
+    // const that = this
+    // window.removeEventListener('scroll', that.onScroll, true)
   }
   render() {
     return (

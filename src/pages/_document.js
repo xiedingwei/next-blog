@@ -3,6 +3,18 @@
 
 // ./pages/_document.js
 import Document, { Head, Main, NextScript } from 'next/document'
+// import { read } from 'to-vfile'
+// import { remark } from 'remark'
+// import remarkToc from 'remark-toc'
+// main()
+
+// async function main() {
+//   const file = await remark()
+//     .use(remarkToc)
+//     .process(await read('D:/next-blog/src/pages/blog/1.md'))
+
+//   console.log(String(file))
+// }
 
 export default class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -14,8 +26,7 @@ export default class MyDocument extends Document {
       // <html style={{ colorScheme: 'dark' }}>
       <html>
         <Head>
-          <title>next.js</title>
-          <link rel="icon" href="/next-ssr/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
           <Main />

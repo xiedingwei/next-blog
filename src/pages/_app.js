@@ -12,12 +12,25 @@ import '../styles/prism.css'
 import copy from 'copy-to-clipboard'
 import toast, { Toaster } from 'react-hot-toast';
 import Layout from '../components/Layout';
+// import { useToggle } from 'react-use'
 
 function MyApp({ Component, pageProps }) {
   let [theme, setTheme] = useState('light');
   const router = useRouter();
   // 定义 mdx 中语法的映射组件
   const components = {
+    h1: props => {
+      return <h1 id={props.children} {...props}></h1>
+    },
+    h2: props => {
+      return <h2 id={props.children} {...props}></h2>
+    },
+    h3: props => {
+      return <h3 id={props.children} {...props}></h3>
+    },
+    h4: props => {
+      return <h4 id={props.children} {...props}></h4>
+    },
     pre: props => <div className='relative codeBlock'
       onClick={(e) => {
         copy(e.target.innerText)
@@ -44,6 +57,10 @@ function MyApp({ Component, pageProps }) {
   }, []);
 
   return <MDXProvider components={components}>
+    <head>
+      <title>home</title>
+      <link rel="icon" href="/favicon.ico" />
+    </head>
     <Component {...pageProps} theme={theme} setTheme={setTheme} />
     <Toaster />
   </MDXProvider>

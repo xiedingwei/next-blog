@@ -78,7 +78,6 @@
   table,
   pre,
   dl,
-  blockquote,
   q,
   ul,
   ol {
@@ -149,10 +148,16 @@
 
   blockquote,
   q {
-    border-left: 4px solid #DDD;
-    padding: 0 1em;
-    color: #777;
+    border-left: 4px solid #49b1f5;
+    padding: 1em;
+    color: rgb(161, 161, 161);
     quotes: none;
+    background-color: #ecf7fe;
+    margin-bottom: 1.2rem;
+
+    p {
+      margin: 0 !important;
+    }
   }
 
   blockquote::before,

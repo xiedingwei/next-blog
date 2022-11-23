@@ -14,7 +14,7 @@ export default class Product extends Component {
         <div>
           <h1 className="text-[1.125rem] text-[#555] dark:text-[#aaa]" data-fade="1">Next Ecosystem</h1>
           <ul className="mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none sm:grid-cols-1">
-            <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/xdw_mayun/ssr-app" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/xiedingwei/next-blog" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
                   <svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em"
@@ -24,8 +24,8 @@ export default class Product extends Component {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">nextjs-tailwind-blog</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">The most beautiful blog in modern times, using Next.js, TypeScript, Tailwind CSS, Welcome to visit</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">next-blog</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">唯美清新的个人博客</p>
                 </div>
               </section>
             </a>
@@ -34,7 +34,7 @@ export default class Product extends Component {
         <div>
           <h1 className="text-[1.125rem] text-[#555] dark:text-[#aaa]" data-fade="2">React Ecosystem</h1>
           <ul className="mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none sm:grid-cols-1">
-            <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/xdw_mayun/radmin" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
                   <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em"
@@ -43,12 +43,12 @@ export default class Product extends Component {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">customer-carousel-case</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">a demo for customer carousel case use swiper and slick</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">radmin</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">基于express+react的后台权限管理系统</p>
                 </div>
               </section>
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/xdw_mayun/university_student_demo" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
                   <svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em"
@@ -58,12 +58,12 @@ export default class Product extends Component {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">docusaurus-docs</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">Little lion front-end programming growth learning document with docusaurus</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">university_student_demo</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">基于java的springboot后端框架，react前端的大学生后台管理小demo</p>
                 </div>
               </section>
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/xdw_mayun/eatery_admin" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
                   <svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em"
@@ -73,8 +73,8 @@ export default class Product extends Component {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">data-growth-component</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">data-growth-component with react and gsap</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">eatery_admin</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">扫码点餐小程序后台（gitee有完整项目）</p>
                 </div>
               </section>
             </a>
@@ -83,22 +83,25 @@ export default class Product extends Component {
         <div>
           <h1 className="text-[1.125rem] text-[#555] dark:text-[#aaa]" data-fade="3">Vue Ecosystem</h1>
           <ul className="mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none sm:grid-cols-1">
-            <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            <a target="_blank" rel="noopener noreferrer" href="https://gitee.com/xdw_mayun/mywirte" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
-                  <svg stroke="currentColor" fill="currentColor" strokeWidth="0" role="img" viewBox="0 0 24 24" height="1em" width="1em"
+                  <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em"
                     xmlns="http://www.w3.org/2000/svg">
-                    <title></title>
-                    <path d="M15.337 23.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914 21.104h.023zM11.71 11.305s-.81-.424-1.774-.424c-1.447 0-1.504.906-1.504 1.141 0 1.232 3.24 1.715 3.24 4.629 0 2.295-1.44 3.76-3.406 3.76-2.354 0-3.54-1.465-3.54-1.465l.646-2.086s1.245 1.066 2.28 1.066c.675 0 .975-.545.975-.932 0-1.619-2.654-1.694-2.654-4.359-.034-2.237 1.571-4.416 4.827-4.416 1.257 0 1.875.361 1.875.361l-.945 2.715-.02.01zM11.17.83c.136 0 .271.038.405.135-.984.465-2.064 1.639-2.508 3.992-.656.213-1.293.405-1.889.578C7.697 3.75 8.951.84 11.17.84V.83zm1.235 2.949v.135c-.754.232-1.583.484-2.394.736.466-1.777 1.333-2.645 2.085-2.971.193.501.309 1.176.309 2.1zm.539-2.234c.694.074 1.141.867 1.429 1.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992 1.289c-.02 0-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209 11.669 0 11.265 0 8.159 0 6.675 3.877 6.21 5.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83 14.063-1.83 14.063L15.009 24l.927-21.166z"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M14 7C13.4477 7 13 7.44772 13 8V16C13 16.5523 13.4477 17 14 17H18C18.5523 17 19 16.5523 19 16V8C19 7.44772 18.5523 7 18 7H14ZM17 9H15V15H17V9Z" fill="currentColor"></path>
+                    <path d="M6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H10C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7H6Z" fill="currentColor"></path>
+                    <path d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13H10C10.5523 13 11 12.5523 11 12C11 11.4477 10.5523 11 10 11H6Z" fill="currentColor"></path>
+                    <path d="M5 16C5 15.4477 5.44772 15 6 15H10C10.5523 15 11 15.4477 11 16C11 16.5523 10.5523 17 10 17H6C5.44772 17 5 16.5523 5 16Z" fill="currentColor"></path>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M4 3C2.34315 3 1 4.34315 1 6V18C1 19.6569 2.34315 21 4 21H20C21.6569 21 23 19.6569 23 18V6C23 4.34315 21.6569 3 20 3H4ZM20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5Z" fill="currentColor"></path>
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">vue-shop</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">Vue family bucket development e-commerce management system (Element-UI)</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">C-Node</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">使用Vue开发模仿cnode官网</p>
                 </div>
               </section>
             </a>
-            <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+            {/* <a target="_blank" rel="noopener noreferrer" href="#" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
               <section className=" flex items-center gap-[24px]">
                 <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
                   <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em"
@@ -131,7 +134,7 @@ export default class Product extends Component {
                   <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">Analyze the principle of vue implementation and implement a simple version of mvvm</p>
                 </div>
               </section>
-            </a>
+            </a> */}
           </ul>
         </div>
         <div>
@@ -147,8 +150,8 @@ export default class Product extends Component {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">hexo-blog-lionkk</h4>
-                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">Magic modified from butterfly theme, providing complete and detailed documentation</p>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">Html-Log</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">个人前端学习记录，笔记项目等等</p>
                 </div>
               </section>
             </a>

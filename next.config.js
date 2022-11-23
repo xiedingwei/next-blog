@@ -2,6 +2,8 @@ const rehypePrism = require('@mapbox/rehype-prism')
 // const remarkGfm = require('remark-gfm')
 const math = require('remark-math');
 const katex = require('rehype-katex');
+const generate = require('./generate.js')
+generate()
 
 // path.join(__dirname, './plugins/md-layout-loader'),
 const withMDX = require('@next/mdx')({
@@ -31,11 +33,19 @@ const nextConfig = {
     //       }
     //     }]
     // })
+    // config.node.fs = 'empty'
+    // config.resolve.fallback = { fs: false };
     return config
   },
+  // webpackDevMiddleware: config => {
+  //   // Perform customizations to webpack dev middleware config
+  //   // Important: return the modified config
+  //   return config
+  // },
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
   pageExtensions: ['js', 'jsx', 'md', 'mdx']
 }
+
 module.exports = withMDX(withImages(nextConfig))

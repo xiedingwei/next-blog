@@ -22,6 +22,11 @@ const nextConfig = {
     //       }
     //     }]
     // })
+    // if(isServer){}
+    // config.node = {
+    //   fs: 'empty'
+    // }
+    // console.log(config.node)
     return config
   },
   // sassOptions: {
