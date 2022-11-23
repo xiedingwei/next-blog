@@ -5,7 +5,7 @@ import axios from 'axios';
 
 export default class Blog extends Component {
   static async getInitialProps({ req, pathname, query, asPath }) {
-    const { data } = await axios.get("http://localhost:3000/api/list")
+    const { data } = await axios.get("https://blog.nankezs.cn/api/list")
     return { pathname, data: data }
   }
   render() {
