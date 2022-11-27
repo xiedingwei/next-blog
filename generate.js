@@ -1,15 +1,16 @@
 const fs = require('fs')
 const path = require('path')
+const matter = require('gray-matter');
 
 module.exports = () => {
-  let fileList = fs.readdirSync(path.join(__dirname, 'src', 'pages', 'blog'))
+  let fileList = fs.readdirSync(path.join(__dirname, 'src', 'content'))
   let files = fileList.map((item) => {
-    return String(fs.readFileSync(path.join(__dirname, 'src', 'pages', 'blog', item)))
+    return String(fs.readFileSync(path.join(__dirname, 'src', 'content', item)))
   })
   let fileContents = []
   files.forEach((item) => {
-    const list = item.split('---', 2)
-    fileContents.push(JSON.parse('{' + list[1] + '}'))
+    const obj = matter(item)
+    fileContents.push(obj.data)
   })
   fs.writeFileSync(path.join(__dirname, 'src', 'pages', 'api', 'list.json'), JSON.stringify(fileContents), 'utf8')
   // return path.join(__dirname, 'src', 'pages', 'api', 'list.json')

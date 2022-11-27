@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import clsx from 'clsx'
 
 export default class Nav extends Component {
   state = {
@@ -23,7 +24,7 @@ export default class Nav extends Component {
   componentDidMount() {
     const that = this
     // console.log(this.refCanvas.current)
-    window.onscroll = that.onScroll
+    window.addEventListener('scroll', that.onScroll)
   }
   onScroll = () => {
     const that = this
@@ -43,14 +44,14 @@ export default class Nav extends Component {
   render() {
     return (
       <div
-        style={this.props.theme == 'dark' ? { backgroundColor: '#215c8c', borderColor: '#215c8c' } : {}}
-        className={this.state.top ? 'sticky z-10 top-0 left-0 w-full h-full' : 'sticky bg-white z-10 top-0 left-0 w-full h-full  border-b border-solid border-gray-300'}>
+        style={this.props.theme == 'dark' ? { backgroundColor: '#215c8c' } : {}}
+        className={clsx('sticky z-10 top-0 left-0 w-full h-full sm:bg-white', !this.state.top && 'bg-white border-b border-solid border-gray-300')}>
         <ul className='py-5 max-w-screen-xl mx-auto  px-12'>
           {this.state.route.map((item, index) => {
             return <li
               role="presentation"
               key={item.href}
-              className='float-left mr-6 text-md'
+              className='float-left mr-6 text-md sm:hidden'
             >
               <Link href={item.href}
               >
@@ -60,25 +61,55 @@ export default class Nav extends Component {
               </Link>
             </li>
           })}
+          {this.state.route.map((item, index) => {
+            return <li
+              role="presentation"
+              key={item.href}
+              className='float-left mr-6 text-md hidden sm:block'
+            >
+              <Link href={item.href}
+              >
+                <a>
+                  {
+                    index === 0 ? <svg t="1669529266085" className="w-5 h-6 cursor-pointer" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2721" width="24" height="24"><path d="M938.412716 480.847489 556.823881 104.126522c-1.89721-2.258437-6.142907-6.194072-12.037151-10.081613-9.920954-6.544043-21.162995-10.520611-33.496905-10.520611-13.180184 0-24.690332 3.997034-34.357506 10.623965-5.846148 4.010337-9.876951 8.102538-12.157901 11.154038L84.209914 480.894561c-14.700817 14.481829-14.700817 38.014802 0 52.529377 14.585183 14.427594 33.995255 8.343015 50.529837-7.945973l25.607214-25.314549 38.918381-37.700647c-1.359974 1.686409-2.282996 2.963495-2.284019 3.373841L196.981327 847.484797c0 50.006927 40.941458 90.427522 91.442642 90.427522l141.713582 0 10.423397 0L440.560948 927.486876 440.560948 686.440961c0-17.467837 14.411221-31.683607 32.223912-31.683607l77.051887 0c17.814738 0 32.223912 14.21577 32.223912 31.683607L582.060659 927.486876l0 10.425444 10.425444 0 141.713582 0c50.485835 0 91.442642-40.428781 91.442642-90.427522L825.642327 467.251843l62.246693 61.207014c20.142759 13.266142 37.897122 17.434068 50.523697 4.963035C953.114556 518.910387 953.114556 495.361041 938.412716 480.847489z" fill={this.props.theme == 'dark' ? "#ffffff" : "#2c2c2c"} p-id="2722"></path></svg> : null
+                  }
+                  {
+                    index === 1 ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-6">
+                      <path d="M4.5 3.75a3 3 0 00-3 3v.75h21v-.75a3 3 0 00-3-3h-15z" />
+                      <path fillRule="evenodd" d="M22.5 9.75h-21v7.5a3 3 0 003 3h15a3 3 0 003-3v-7.5zm-18 3.75a.75.75 0 01.75-.75h6a.75.75 0 010 1.5h-6a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clipRule="evenodd" />
+                    </svg>
+                      : null
+                  }
+                  {
+                    index === 2 ? <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-6">
+                      <path d="M21 6.375c0 2.692-4.03 4.875-9 4.875S3 9.067 3 6.375 7.03 1.5 12 1.5s9 2.183 9 4.875z" />
+                      <path d="M12 12.75c2.685 0 5.19-.586 7.078-1.609a8.283 8.283 0 001.897-1.384c.016.121.025.244.025.368C21 12.817 16.97 15 12 15s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.285 8.285 0 001.897 1.384C6.809 12.164 9.315 12.75 12 12.75z" />
+                      <path d="M12 16.5c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 15.914 9.315 16.5 12 16.5z" />
+                      <path d="M12 20.25c2.685 0 5.19-.586 7.078-1.609a8.282 8.282 0 001.897-1.384c.016.121.025.244.025.368 0 2.692-4.03 4.875-9 4.875s-9-2.183-9-4.875c0-.124.009-.247.025-.368a8.284 8.284 0 001.897 1.384C6.809 19.664 9.315 20.25 12 20.25z" />
+                    </svg>
+                      : null
+                  }
+                </a>
+              </Link>
+            </li>
+          })}
           {
             this.props.theme == 'dark' ? <li className='float-right ml-6'
               onClick={() => {
                 this.props.setTheme('light')
                 document.documentElement.setAttribute('style', 'color-scheme: light;')
+                document.documentElement.setAttribute('class', 'light')
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 cursor-pointer">
-                <path d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-              </svg>
+              <svg t="1669521101739" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="13311" width="24" height="24" className="w-6 h-6 cursor-pointer"><path d="M501.48 493.55m-233.03 0a233.03 233.03 0 1 0 466.06 0 233.03 233.03 0 1 0-466.06 0Z" fill="#ffffff" p-id="13312"></path><path d="M501.52 185.35H478.9c-8.28 0-15-6.72-15-15V87.59c0-8.28 6.72-15 15-15h22.62c8.28 0 15 6.72 15 15v82.76c0 8.28-6.72 15-15 15zM281.37 262.76l-16 16c-5.86 5.86-15.36 5.86-21.21 0l-58.52-58.52c-5.86-5.86-5.86-15.36 0-21.21l16-16c5.86-5.86 15.36-5.86 21.21 0l58.52 58.52c5.86 5.86 5.86 15.35 0 21.21zM185.76 478.48v22.62c0 8.28-6.72 15-15 15H88c-8.28 0-15-6.72-15-15v-22.62c0-8.28 6.72-15 15-15h82.76c8.28 0 15 6.72 15 15zM270.69 698.63l16 16c5.86 5.86 5.86 15.36 0 21.21l-58.52 58.52c-5.86 5.86-15.36 5.86-21.21 0l-16-16c-5.86-5.86-5.86-15.36 0-21.21l58.52-58.52c5.85-5.86 15.35-5.86 21.21 0zM486.41 794.24h22.62c8.28 0 15 6.72 15 15V892c0 8.28-6.72 15-15 15h-22.62c-8.28 0-15-6.72-15-15v-82.76c0-8.28 6.72-15 15-15zM706.56 709.31l16-16c5.86-5.86 15.36-5.86 21.21 0l58.52 58.52c5.86 5.86 5.86 15.36 0 21.21l-16 16c-5.86 5.86-15.36 5.86-21.21 0l-58.52-58.52c-5.86-5.85-5.86-15.35 0-21.21zM802.17 493.59v-22.62c0-8.28 6.72-15 15-15h82.76c8.28 0 15 6.72 15 15v22.62c0 8.28-6.72 15-15 15h-82.76c-8.28 0-15-6.72-15-15zM717.24 273.44l-16-16c-5.86-5.86-5.86-15.36 0-21.21l58.52-58.52c5.86-5.86 15.36-5.86 21.21 0l16 16c5.86 5.86 5.86 15.36 0 21.21l-58.52 58.52c-5.86 5.86-15.35 5.86-21.21 0z" fill="#ffffff" p-id="13313"></path></svg>
             </li> : <li className='float-right ml-6'
               onClick={() => {
                 this.props.setTheme('dark')
                 document.documentElement.setAttribute('style', 'color-scheme: dark;')
+                document.documentElement.setAttribute('class', 'dark')
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 cursor-pointer">
-                <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
-              </svg>
+              <svg t="1669520440423" viewBox="0 0 1064 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="8977" width="24" height="24" className="w-5 h-6 cursor-pointer"><path d="M471.36768 34.57024c58.90048-7.45472 84.45952 57.63072 58.08128 96.17408a276.48 276.48 0 0 0 384.28672 384.28672c38.54336-26.37824 103.6288-0.8192 96.17408 58.08128C979.84512 810.06592 777.6256 993.28 532.48 993.28c-265.8304 0-481.28-215.4496-481.28-481.28C51.2 266.89536 234.41408 64.63488 471.36768 34.57024z m-69.38624 121.6512A379.0848 379.0848 0 0 0 153.6 512 378.88 378.88 0 0 0 532.48 890.88a379.0848 379.0848 0 0 0 355.81952-248.38144A378.88 378.88 0 0 1 401.98144 156.18048z" fill="#1D1D1F" p-id="8978"></path><path d="M781.02528 93.51168a19.2512 19.2512 0 0 1 35.38944 0l28.672 65.9456c7.7824 17.85856 22.07744 32.11264 39.97696 39.89504l65.9456 28.71296a19.2512 19.2512 0 0 1 0 35.38944l-65.9456 28.672c-17.89952 7.7824-32.1536 22.07744-39.936 39.936l-28.71296 65.9456a19.2512 19.2512 0 0 1-35.38944 0l-28.672-65.9456a77.16864 77.16864 0 0 0-39.97696-39.89504l-65.9456-28.71296a19.2512 19.2512 0 0 1 0-35.38944l65.9456-28.672c17.89952-7.7824 32.1536-22.07744 39.936-39.936l28.71296-65.9456z" fill="#1D1D1F" p-id="8979"></path></svg>
             </li>
           }
           <li className='float-right ml-6'>

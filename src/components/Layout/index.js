@@ -3,6 +3,7 @@ import Nav from '../Nav'
 import Foot from '../Foot'
 import Router from 'next/router';
 import Loading from "../Loading";
+import clsx from 'clsx';
 Router.events.on('routeChangeStart', (url) => {
   // if (url !== '/') {
   //   location.href = './next-ssr/403'
@@ -147,8 +148,8 @@ export default class Layout extends Component {
       `}</style>
         <canvas className='canvas' ref={this.refCanvas}></canvas>
         <Nav href={this.props.href} theme={this.props.theme} setTheme={this.props.setTheme} />
-        <div className='max-w-screen-xl mx-auto  px-12 responsive-layout'>
-          <div className='clear-both px-6 pt-8'>
+        <div className={clsx('max-w-screen-xl mx-auto  px-12 responsive-layout', this.props.full && 'sm:px-[1rem]')}>
+          <div className={clsx('pt-8', !this.props.full && 'px-6')}>
             {this.props.children}
           </div>
         </div>

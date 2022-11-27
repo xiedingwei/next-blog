@@ -11,7 +11,7 @@ export default class Product extends Component {
       <Layout href={this.props.pathname} theme={this.props.theme} setTheme={this.props.setTheme}>
         <p className="text-[2rem]">Projects</p>
         <p className="mb-[2rem] italic opacity-50">Showcase of my projects on front-end development that I'm proud of.</p>
-        <div>
+        <div className='fade-in-start'>
           <h1 className="text-[1.125rem] text-[#555] dark:text-[#aaa]" data-fade="1">Next Ecosystem</h1>
           <ul className="mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none sm:grid-cols-1">
             <a target="_blank" rel="noopener noreferrer" href="https://github.com/xiedingwei/next-blog" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
@@ -26,6 +26,27 @@ export default class Product extends Component {
                 <div>
                   <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">next-blog</h4>
                   <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">唯美清新的个人博客</p>
+                </div>
+              </section>
+            </a>
+          </ul>
+        </div>
+        <div className='fade-in-start'>
+          <h1 className="text-[1.125rem] text-[#555] dark:text-[#aaa]" data-fade="1">Umi-js Ecosystem</h1>
+          <ul className="mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none sm:grid-cols-1">
+            <a target="_blank" rel="noopener noreferrer" href="https://github.com/xiedingwei/umi-admin" className="cursor-pointer group h-full p-4 hover:bg-[#88888808]">
+              <section className=" flex items-center gap-[24px]">
+                <div className="text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80">
+                  <svg stroke="currentColor" fill="none" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path d="M13.325 3.05011L8.66741 20.4323L10.5993 20.9499L15.2568 3.56775L13.325 3.05011Z" fill="currentColor"></path>
+                    <path d="M7.61197 18.3608L8.97136 16.9124L8.97086 16.8933L3.87657 12.1121L8.66699 7.00798L7.20868 5.63928L1.04956 12.2017L7.61197 18.3608Z" fill="currentColor"></path>
+                    <path d="M16.388 18.3608L15.0286 16.9124L15.0291 16.8933L20.1234 12.1121L15.333 7.00798L16.7913 5.63928L22.9504 12.2017L16.388 18.3608Z" fill="currentColor"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4 className="text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100">umi-admin</h4>
+                  <p className="mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50">动态后台权限管理系统</p>
                 </div>
               </section>
             </a>

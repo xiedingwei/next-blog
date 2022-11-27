@@ -9,13 +9,22 @@
  */
 
 /* This is the overall wrapper, it should be treated as the `body` section. */
+// .markdown>:nth-child(1),
+// .markdown>:nth-child(2) {
+//   display: none;
+// }
+
 .markdown {
+  font {
+    display: block;
+  }
+
   img {
     max-width: 100%;
   }
 
   a {
-    color: blue;
+    color: rgb(59, 130, 246);
     text-decoration: underline;
   }
 
@@ -50,6 +59,7 @@
     border: 1px solid #CCC;
     padding: 0.5em 0.7em;
     display: block !important;
+    background-color: #f5f2f0;
     /* added to counteract the Yahoo-specific `code` rule; without this, code blocks in Blogger are broken */
   }
 
@@ -177,6 +187,26 @@
     padding: 0;
     font-weight: bold;
     color: #009688;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    a {
+      cursor: pointer;
+      color: #009688;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(59, 130, 246);
+    }
+
+    a:hover::after {
+      content: ' #';
+      color: rgb(59, 130, 246);
+    }
   }
 
   h1 {

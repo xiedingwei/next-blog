@@ -1,9 +1,22 @@
 import React from 'react'
 import Link from 'next/link'
+// import { lazyload } from 'react-lazyload';
+import { useInView } from 'react-intersection-observer';
+import Loading from '../Loading';
+
+
+// @lazyload({
+//   height: 200,
+//   once: true,
+//   offset: 100
+// })
 export default function BlogItem(props) {
+  // const [ref, inView] = useInView({ delay: 1000, threshold: 1, triggerOnce: true, rootMargin: '0px 0px' });
+
   return (
-    <div className='mb-8 w-full rounded-md border border-gray-300 bg-white transform hover:-translate-y-1 hover:scale-102  transition duration-100 hover:shadow-md ease-in-out'
+    <div ref={null} className='mb-8 w-full rounded-md border border-gray-300 dark:bg-[#222222] bg-white transform hover:-translate-y-1 hover:scale-102  transition duration-100 hover:shadow-md ease-in-out'
     >
+      {/* {inView ? */}
       <Link href={'/blog/' + props.data.fileName}>
         <div className="flex items-end p-4 mb:flex-col">
           <div style={{ flex: '3' }} className="w-full">
@@ -14,19 +27,18 @@ export default function BlogItem(props) {
             <p className="text-sm text-gray-700 dark:text-gray-300">{props.data.describe}</p>
             <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
               <div className="flex items-center gap-1">
-                <svg t="1668922850864" className="icon" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="10791" width="16" height="16">
-                  <path d="M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64z m0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" p-id="10792"></path>
-                  <path d="M686.7 638.6L544.1 535.5V288c0-4.4-3.6-8-8-8H488c-4.4 0-8 3.6-8 8v275.4c0 2.6 1.2 5 3.3 6.5l165.4 120.6c3.6 2.6 8.6 1.8 11.2-1.7l28.6-39c2.6-3.7 1.8-8.7-1.8-11.2z" p-id="10793"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 {props.data.readTime} read
 
               </div>
               <div className="flex items-center gap-1">
-                <svg t="1668922811549" className="icon" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="9707" width="16" height="16">
-                  <path d="M512.002844 249.457778c189.155556 0 361.415111 183.751111 427.207112 262.542222-65.792 78.791111-238.051556 262.542222-427.207112 262.542222S150.587733 590.791111 84.795733 512C150.587733 433.208889 322.847289 249.457778 512.002844 249.457778zM512.002844 170.666667C277.279289 170.666667 78.395733 394.638222 11.323733 479.715556a51.683556 51.683556 0 0 0 0 64.568888C78.395733 629.361778 277.279289 853.333333 512.002844 853.333333s433.607111-223.971556 500.679112-309.048889a51.683556 51.683556 0 0 0 0-64.568888C945.609956 394.638222 746.7264 170.666667 512.002844 170.666667z m0 262.542222c42.410667 0 76.8 35.271111 76.8 78.791111s-34.389333 78.791111-76.8 78.791111-76.8-35.271111-76.8-78.791111 34.389333-78.791111 76.8-78.791111z m0-78.734222c-62.122667 0-118.129778 38.371556-141.880888 97.251555-23.779556 58.88-10.638222 126.606222 33.28 171.662222a150.755556 150.755556 0 0 0 167.367111 34.133334C628.169956 633.173333 665.602844 575.715556 665.602844 512c0-87.011556-68.750222-157.525333-153.571555-157.525333z" p-id="9708"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
+
                 - views
 
               </div>
@@ -39,6 +51,7 @@ export default function BlogItem(props) {
           </div>
         </div>
       </Link>
+      {/* : '未出现'} */}
     </div>
   )
 }

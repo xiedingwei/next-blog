@@ -1,18 +1,20 @@
-const rehypePrism = require('@mapbox/rehype-prism')
+// const rehypePrism = require('@mapbox/rehype-prism')
 // const remarkGfm = require('remark-gfm')
-const math = require('remark-math');
-const katex = require('rehype-katex');
+// const math = require('remark-math');
+// const katex = require('rehype-katex');
 const generate = require('./generate.js')
+// const slug = require('remark-slug');
+// const externalLinks = require('remark-external-links')
 generate()
 
 // path.join(__dirname, './plugins/md-layout-loader'),
-const withMDX = require('@next/mdx')({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [math],
-    rehypePlugins: [rehypePrism, katex],
-  },
-})
+// const withMDX = require('@next/mdx')({
+//   extension: /\.mdx?$/,
+//   options: {
+//     remarkPlugins: [math],
+//     rehypePlugins: [rehypePrism, katex],
+//   },
+// })
 const withImages = require('next-images')
 const path = require('path')
 const nextConfig = {
@@ -48,4 +50,4 @@ const nextConfig = {
   pageExtensions: ['js', 'jsx', 'md', 'mdx']
 }
 
-module.exports = withMDX(withImages(nextConfig))
+module.exports = withImages(nextConfig)
