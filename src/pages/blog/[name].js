@@ -14,7 +14,6 @@ import GithubSlugger from 'github-slugger'
 const slugger = new GithubSlugger()
 
 // import { useInView } from 'react-intersection-observer';
-
 export default function BlogPage(props) {
   let array = []
   slugger.reset()
@@ -30,13 +29,11 @@ export default function BlogPage(props) {
   extract(props.tocElement)
   const [id, setId] = React.useState(array[0])
   React.useEffect(() => {
-    setTimeout(() => {
-      let arrayElement = array.map((item) => {
-        // console.log(document.getElementById(item).offsetTop + 54)
-        return { offsetTop: document.getElementById(item).offsetTop + 56, id: item }
-      })
-      window.addEventListener('scroll', () => {
-
+    let isMounted = true;
+    let arrayElement
+    let onScrollTrue
+    function onScroll(arrayElement) {
+      return () => {
         let selectId
         arrayElement.forEach((item) => {
           if (item.offsetTop <= document.documentElement.scrollTop) {
@@ -47,12 +44,21 @@ export default function BlogPage(props) {
           }
         })
         // if (selectId !== id) {
-        setId(selectId)
+        if (isMounted) setId(selectId)
         // console.log(selectId)
         // console.log(1111)
         // }
+      }
+    }
+    setTimeout(() => {
+      arrayElement = array.map((item) => {
+        // console.log(document.getElementById(item).offsetTop + 54)
+        return { offsetTop: document.getElementById(item).offsetTop + 56, id: item }
       })
+      onScrollTrue = onScroll(arrayElement)
+      window.addEventListener('scroll', onScrollTrue)
     }, 1000);
+    return () => { isMounted = false; window.removeEventListener('scroll', onScrollTrue) }
   }, [])
   // console.log(array)
   return (

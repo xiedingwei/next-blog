@@ -38,8 +38,9 @@ export default class Nav extends Component {
     }
   }
   componentWillUnmount() {
-    // const that = this
-    // window.removeEventListener('scroll', that.onScroll, true)
+    const that = this
+    window.removeEventListener('scroll', that.onScroll, true)
+    that.setState = () => false
   }
   render() {
     return (
