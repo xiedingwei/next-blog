@@ -32,22 +32,27 @@ export default function BlogPage(props) {
   React.useEffect(() => {
     setTimeout(() => {
       let arrayElement = array.map((item) => {
-        return { offsetTop: document.getElementById(item).offsetTop + 40, id: item }
+        // console.log(document.getElementById(item).offsetTop + 54)
+        return { offsetTop: document.getElementById(item).offsetTop + 56, id: item }
       })
       window.addEventListener('scroll', () => {
-        // console.log(document.documentElement.scrollTop)
+
         let selectId
         arrayElement.forEach((item) => {
-          if (item.offsetTop < document.documentElement.scrollTop) {
+          if (item.offsetTop <= document.documentElement.scrollTop) {
+            // console.log(item.offsetTop, document.documentElement.scrollTop)
+            // console.log(item)
             selectId = item.id
+            // console.log(selectId, item.id)
           }
         })
-        if (selectId !== id) {
-          setId(selectId)
-          // console.log(1111)
-        }
+        // if (selectId !== id) {
+        setId(selectId)
+        // console.log(selectId)
+        // console.log(1111)
+        // }
       })
-    }, 200);
+    }, 1000);
   }, [])
   // console.log(array)
   return (
