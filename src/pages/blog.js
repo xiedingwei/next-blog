@@ -17,7 +17,7 @@ export default class Blog extends Component {
     if (query.activePage) { state.activePage = query.activePage }
     if (query.itemsCountPerPage) { state.itemsCountPerPage = query.itemsCountPerPage }
     // console.log(pathname, query)
-    const { data } = await axios.get("http://localhost:3000/api/list", {
+    const { data } = await axios.get("https://blog.nankezs.cn/api/list", {
       params: {
         activePage: state.activePage,
         itemsCountPerPage: state.itemsCountPerPage
