@@ -27,7 +27,7 @@ export default class MyDocument extends Document {
       <html>
         <Head>
           <link rel="icon" href="/favicon.ico" />
-          <meta name="referrer" content="no-referrer">
+          <meta name="referrer" content="no-referrer" />
         </Head>
         <body>
           <Main />
